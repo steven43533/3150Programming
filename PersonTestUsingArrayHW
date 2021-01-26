@@ -1,0 +1,82 @@
+
+/**
+ * ITEC 3150 - ITEC 2140 and 2150 Review
+ * 
+ * @author wjin
+ * 
+ */
+
+public class PersonTestUsingArray {
+
+	/**
+	 * Method: main
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// Create an array that can store five Person objects and assign it to the
+		// variable people
+		Person people[] = new Person[5];
+
+		/*
+		 * Create Person objects for the following people and add them to the array list
+		 * people.
+		 * 
+		 * Id is the 1st item on each line, then first name last name and city. 1, Nana
+		 * Agyeman, Buford 2, Joseph Anderson, Duluth 3, Kyle Brooks, Lawrenceville 4,
+		 * Joshua Broughton, Dacula 5, Demetri Clark, Lilburn
+		 */
+		people[0] = new Person("Nana", "Agyeman", 1, "Buford");
+		people[1] = new Person("Joseph", "Anderson", 2, "Duluth");
+		people[2] = new Person("Kyle", "Brooks", 3, "Lawrenceville");
+		people[3] = new Person("Joshua", "Broughton", 4, "Dacula");
+		people[4] = new Person("Demetri", "Clark", 5, "Lilburn");
+
+		/*
+		 * Print the array variable people
+		 */
+		// System.out.println(people);
+
+		/*
+		 * Print the array elements using a loop. Print each object in the following
+		 * format: 1: Nana Agyeman @ Buford 2: Joseph Anderson @ Duluth 3: Kyle Brooks @
+		 * Lawrenceville 4: Joshua Broughton @ Dacula 5: Demetri Clark @ Lilburn
+		 */
+
+		System.out.println("\nThe people are:");
+		for (Person p : people) {
+			System.out.println(p.getIdNum() + ": " + p.getFirstName() + " " + p.getLastName() + " @ " + p.getCity());
+		}
+
+		/*
+		 * Add another person into the array: 6, Joni Elshani, Atlanta
+		 */
+		people[4] = new Person("Joni", "Elshani", 6, "Atlanta");
+
+		/*
+		 * Print the array elements
+		 */
+		System.out.println("\nAfter adding the sixth person, the people are:");
+		for (Person p : people) {
+			System.out.println(p.getIdNum() + ": " + p.getFirstName() + " " + p.getLastName() + " @ " + p.getCity());
+		}
+
+		/*
+		 * Remove the first element from the array:
+		 */
+
+		Person people2[] = new Person[people.length];
+		for (int i = 1; i < people.length; i++)
+			people2[i] = people[i];
+
+		/*
+		 * Print all the people in the array list
+		 */
+		System.out.println("\nAfter removing the first person, the people are:");
+		for (Person p : people2) {
+			System.out.println(p.getIdNum() + ": " + p.getFirstName() + " " + p.getLastName() + " @ " + p.getCity());
+		}
+
+	}
+
+}
